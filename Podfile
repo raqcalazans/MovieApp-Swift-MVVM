@@ -9,8 +9,6 @@ pod 'Alamofire', '~> 5.5'
 pod 'AlamofireImage', '4.1'
 pod 'UIFontComplete'
 pod 'NVActivityIndicatorView'
+pod 'Quick', '~> 5'
+pod 'Nimble', '~> 10'
 end
-
-
-
-
