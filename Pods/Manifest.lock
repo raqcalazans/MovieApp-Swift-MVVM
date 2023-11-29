@@ -1,31 +1,39 @@
 PODS:
-  - Alamofire (5.5.0)
+  - Alamofire (5.8.1)
   - AlamofireImage (4.1.0):
     - Alamofire (~> 5.1)
+  - Nimble (10.0.0)
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
-  - UIFontComplete (5.0.0)
+  - Quick (5.0.1)
+  - UIFontComplete (6.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.5)
   - AlamofireImage (= 4.1)
+  - Nimble (~> 10)
   - NVActivityIndicatorView
+  - Quick (~> 5)
   - UIFontComplete
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
+    - Nimble
     - NVActivityIndicatorView
+    - Quick
     - UIFontComplete
 
 SPEC CHECKSUMS:
-  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
-  UIFontComplete: 843cb7b58fd6503b3918447918ea6daaeaceccff
+  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
+  UIFontComplete: 059d88d340697fcda136f636c6e57a64e9986526
 
-PODFILE CHECKSUM: 982e4f2d4dd7ec999d5acb4955df3590f1d093ea
+PODFILE CHECKSUM: 1d491df9899151e64aaa690fa191476718fb63bf
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.13.0

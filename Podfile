@@ -1,14 +1,45 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '17.0'
+
+use_frameworks!
+
+workspace 'NetFilm'
+
+# Ignora todos warnings dos Pods
+inhibit_all_warnings!
+
+# Para evitar problemas ao atualizar (pod update):
+source 'https://github.com/CocoaPods/Specs.git'
+
+def alamofire
+  pod 'Alamofire', '~> 5.5'
+end
+
+def alamofire_image
+  pod 'AlamofireImage', '4.1'
+end
+
+def ui_font_complete
+  pod 'UIFontComplete'
+end
+
+def nv_activity
+  pod 'NVActivityIndicatorView'
+end
+
+def quick_nimble
+  pod 'Quick', '~> 5'
+  pod 'Nimble', '~> 10'
+end
 
 target 'NetFilm' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-pod 'Alamofire', '~> 5.5'
-pod 'AlamofireImage', '4.1'
-pod 'UIFontComplete'
-pod 'NVActivityIndicatorView'
-pod 'Quick', '~> 5'
-pod 'Nimble', '~> 10'
+  project './NetFilm.project'
+  alamofire
+  alamofire_image
+  ui_font_complete
+  nv_activity
+  
+  target 'NetFilmTests' do
+    inherit! :search_paths
+    quick_nimble
+  end
 end

@@ -5,7 +5,7 @@
 //  Created by Muhammed Faruk Söğüt on 4.09.2023.
 //
 
-//import XCTest
+import XCTest
 @testable import NetFilm
 
 class MockMainService: MainServiceProtocol {

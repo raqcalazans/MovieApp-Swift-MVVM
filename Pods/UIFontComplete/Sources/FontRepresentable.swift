@@ -19,12 +19,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+import SwiftUI
 import UIKit
 
 public protocol FontRepresentable: RawRepresentable {}
 
 extension FontRepresentable where Self.RawValue == String {
-    /// An alternative way to get a particular `UIFont` instance from a `Font`
+    /// An alternative way to get a particular `UIFont` instance from a `BuiltInFont`
     /// value.
     ///
     /// - parameter of size: The desired size of the font.
@@ -37,5 +38,27 @@ extension FontRepresentable where Self.RawValue == String {
 
     public func of(size: Double) -> UIFont? {
         return UIFont(name: rawValue, size: CGFloat(size))
+    }
+
+	@available(tvOS 13.0, iOS 13.0, *)
+	public func of(size: CGFloat) -> Font {
+		return .custom(rawValue, size: size)
+	}
+
+	@available(tvOS 13.0, iOS 13.0, *)
+	public func of(size: Double) -> Font {
+		return .custom(rawValue, size: CGFloat(size))
+	}
+
+    /// Creates scalable `UIFont` object that takes current Dynamic Type setting into account.
+    ///
+    /// Make sure that labels using this scaleable font have `adjustsFontForContentSizeCategory` set to `true`.
+    /// - Parameter textStyle: The text style to use for this font.
+    /// - Returns: Scalable `UIFont` object.
+    @available(iOS 11.0, *)
+    public func scaledFont(textStyle: UIFont.TextStyle = .body) -> UIFont? {
+        let defaultSize = UIFont.preferredFont(forTextStyle: textStyle).pointSize
+        guard let font = UIFont(name: rawValue, size: defaultSize) else { return nil }
+        return UIFontMetrics(forTextStyle: textStyle).scaledFont(for: font)
     }
 }
